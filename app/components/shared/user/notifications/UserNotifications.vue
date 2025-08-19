@@ -25,7 +25,7 @@ const notifs = [
   {
     title: "Nouveau badge disponible",
     caption: "Tu as débloqué le succès \"Obtient de l'aide\" !",
-    icon: "Badge",
+    icon: "Award",
   },
 ];
 const notifications = computed(() => notifs.sort((a, b) => a.new ? -1 : 1));
