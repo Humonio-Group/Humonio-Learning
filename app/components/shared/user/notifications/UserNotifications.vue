@@ -28,7 +28,7 @@ const notifs = [
     icon: "Award",
   },
 ];
-const notifications = computed(() => notifs.sort((a, b) => a.new ? -1 : 1));
+const notifications = computed(() => [...notifs].sort(a => a.new ? -1 : 1));
 </script>
 
 <template>
