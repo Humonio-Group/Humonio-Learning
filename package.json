@@ -10,7 +10,9 @@
     "generate": "nuxt generate",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
-    "lint": "eslint . --fix"
+    "lint": "eslint . --fix",
+    "add:component": "tsx scripts/shadcn-add.ts",
+    "add:module": "tsx scripts/nuxt-module-add.ts"
   },
   "dependencies": {
     "@nuxt/eslint": "1.9.0",
@@ -35,6 +37,7 @@
   },
   "devDependencies": {
     "eslint": "^9.33.0",
+    "tsx": "^4.20.4",
     "typescript": "^5.9.2",
     "vite-plugin-eslint2": "^5.0.4"
   }
