@@ -1,3 +1,10 @@
 {
-  "hello": "Bonjour"
+  "hello": "Bonjour",
+  "user-context": {
+    "profile": "Profil",
+    "settings": "Paramètres",
+    "getting-help": "Obtenir de l'aide",
+    "go-to-admin": "Panneau administrateur",
+    "log-out": "Déconnexion"
+  }
 }
