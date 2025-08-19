@@ -1,5 +1,11 @@
 {
   "hello": "Bonjour",
+  "btn": {
+    "see-all-notifications": "Voir toutes les notifications"
+  },
+  "labels": {
+    "new": "Nouveau | Nouvelle"
+  },
   "user-context": {
     "profile": "Profil",
     "settings": "Paramètres",
