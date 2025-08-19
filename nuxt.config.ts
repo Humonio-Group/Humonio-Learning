@@ -13,6 +13,7 @@ export default defineNuxtConfig({
     "@nuxt/eslint",
   ],
   devtools: { enabled: true },
+  css: ["./tailwind.css"],
   colorMode: {
     classPrefix: "",
     classSuffix: "",
