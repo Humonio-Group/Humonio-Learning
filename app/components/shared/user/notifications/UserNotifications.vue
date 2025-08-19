@@ -8,9 +8,9 @@ defineProps<{
   align?: Align;
 }>();
 
-const hasNotifications = computed(() => true);
+const hasNotifications = computed(() => notifs.value.some(notif => notif.new));
 
-const notifs = [
+const notifs = ref([
   {
     title: "Nouveau courriel réceptionné",
     caption: "Vous ne vous êtes pas connecté depuis plus de 14 jours...",
@@ -27,8 +27,8 @@ const notifs = [
     caption: "Tu as débloqué le succès \"Obtient de l'aide\" !",
     icon: "Award",
   },
-];
-const notifications = computed(() => [...notifs].sort(a => a.new ? -1 : 1));
+]);
+const notifications = computed(() => [...notifs.value].sort(a => a.new ? -1 : 1));
 </script>
 
 <template>
