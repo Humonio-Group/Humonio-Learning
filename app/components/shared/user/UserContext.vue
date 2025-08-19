@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { DropdownMenu } from "~/components/ui/dropdown-menu";
 import { HelpCircle, LogOut, Settings, ShieldUser, User } from "lucide-vue-next";
+import type { Align, Side } from "#shared/types/positions";
 
 const user = {
   firstname: "Loic",
@@ -12,14 +13,14 @@ const user = {
 };
 
 defineProps<{
-  side?: "top" | "right" | "bottom" | "left";
-  align?: "start" | "center" | "end";
+  side?: Side;
+  align?: Align;
 }>();
 </script>
 
 <template>
   <DropdownMenu>
-    <DropdownMenuTrigger>
+    <DropdownMenuTrigger as-child>
       <slot>
         <Button
           size="icon"
