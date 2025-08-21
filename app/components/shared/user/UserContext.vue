@@ -12,9 +12,9 @@ defineProps<{
 </script>
 
 <template>
-  <DropdownMenu>
-    <DropdownMenuTrigger as-child>
-      <slot>
+  <div class="flex">
+    <DropdownMenu>
+      <DropdownMenuTrigger as-child>
         <Button
           size="icon"
           variant="ghost"
