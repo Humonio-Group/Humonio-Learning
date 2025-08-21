@@ -3,6 +3,7 @@ import { DropdownMenu } from "~/components/ui/dropdown-menu";
 import { HelpCircle, LogOut, Settings, ShieldUser, User } from "lucide-vue-next";
 import type { Align, Side } from "#shared/types/positions";
 import UserSettings from "~/components/shared/user/settings/UserSettings.vue";
+import ProfileDialog from "~/components/shared/user/profile/ProfileDialog.vue";
 
 const { user } = useUser();
 
@@ -12,6 +13,7 @@ defineProps<{
 }>();
 
 const settingsOpened = ref(false);
+const showProfile = ref(true);
 </script>
 
 <template>
@@ -57,7 +59,7 @@ const settingsOpened = ref(false);
         </DropdownMenuGroup>
         <DropdownMenuSeparator />
         <DropdownMenuGroup>
-          <DropdownMenuItem>
+          <DropdownMenuItem @click="showProfile = true">
             <User />
             {{ $t("user-context.profile") }}
           </DropdownMenuItem>
@@ -84,6 +86,10 @@ const settingsOpened = ref(false);
         </DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>
+    <ProfileDialog
+      v-model:open="showProfile"
+      :user="user"
+    />
     <UserSettings v-model:open="settingsOpened" />
   </div>
 </template>

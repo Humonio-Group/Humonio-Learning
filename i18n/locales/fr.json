@@ -10,12 +10,22 @@
     "new": "Nouveau | Nouvelle",
     "last-update": "Dernière mise à jour le {date} à {hour}"
   },
+  "sr-messages": {
+    "profile-viewing": {
+      "title": "Profil de {name}",
+      "caption": "Voici toutes les informations configurées du profil de {name}."
+    }
+  },
   "user-context": {
     "profile": "Profil",
     "settings": "Paramètres",
     "getting-help": "Obtenir de l'aide",
     "go-to-admin": "Panneau administrateur",
     "log-out": "Déconnexion"
+  },
+  "user-profile": {
+    "contact": "Informations de contact",
+    "public-profiles": "Profils public"
   },
   "settings": {
     "title": "Paramètres",
