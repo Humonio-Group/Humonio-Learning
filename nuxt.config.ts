@@ -11,6 +11,7 @@ export default defineNuxtConfig({
     "shadcn-nuxt",
     "@pinia/nuxt",
     "@nuxt/eslint",
+    "@nuxt/image",
   ],
   devtools: { enabled: true },
   css: ["./tailwind.css"],
