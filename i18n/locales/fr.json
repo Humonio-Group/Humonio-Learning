@@ -1,10 +1,14 @@
 {
   "hello": "Bonjour",
   "btn": {
+    "save": "Enregistrer",
+    "reset": "Réinitialiser",
+    "save-and-close": "Enregistrer et fermer",
     "see-all-notifications": "Voir toutes les notifications"
   },
   "labels": {
-    "new": "Nouveau | Nouvelle"
+    "new": "Nouveau | Nouvelle",
+    "last-update": "Dernière mise à jour le {date} à {hour}"
   },
   "user-context": {
     "profile": "Profil",
@@ -12,5 +16,89 @@
     "getting-help": "Obtenir de l'aide",
     "go-to-admin": "Panneau administrateur",
     "log-out": "Déconnexion"
+  },
+  "settings": {
+    "title": "Paramètres",
+    "description":  "Configure ton compte ici.",
+    "profile": {
+      "label": "Mon compte",
+      "picture": {
+        "title": "Photo de profil",
+        "caption": "Téléverse une nouvelle photo ou change la photo existante."
+      },
+      "firstname": "Prénom",
+      "lastname": "Nom",
+      "email": "Adresse e-mail",
+      "phone": "Numéro de téléphone",
+      "linkedin": "Lien linkedin"
+    },
+    "interface": {
+      "label": "Interface",
+      "theme": {
+        "label": "Thème",
+        "options": {
+          "light": "Clair",
+          "dark":  "Sombre",
+          "system":  "Automatique"
+        }
+      },
+      "lang": {
+        "label": "Langue"
+      }
+    },
+    "notifications": {
+      "label": "Notifications",
+      "programs": {
+        "label": "Programmes",
+        "caption": "Sélectionne comment tu souhaite recevoir les mises à jour de tes programmes. Désactiver les notifications par e-mail pour les programmes n'affectera pas la réception d'autres alertes système importantes par e-mail. Ajustez vos paramètres pour rester informé de la manière qui te conviens le mieux !",
+        "options": {
+          "app-only": {
+            "title": "Uniquement dans l'application",
+            "caption": "Ne reçois des notifications que dans l'application web, sur la page de notifications."
+          },
+          "web-and-app": {
+            "title": "Navigateur et Application mobile",
+            "caption": "Reçois des notifications à la fois sur le navigateur web et sur l'application mobile."
+          },
+          "web-and-email": {
+            "title": "Navigateur et E-mail",
+            "caption": "Reçois des notifications à la fois sur le navigateur web et par e-mail."
+          },
+          "all-channels": {
+            "title": "Tous les canaux",
+            "caption": "Reçois des notifications sur tous les canaux disponibles."
+          },
+          "auto": {
+            "title": "Automatique",
+            "caption": "Reçois des notifications sur ton navigateur web et sur l'application mobile si elle est installée sinon par e-mail."
+          }
+        }
+      },
+      "summary": {
+        "label": "Résumés d'activité",
+        "caption": "Suis tes progrès sans effort ! Détermine la fréquence à laquelle tu souhaites recevoir ton rapport d'activité. Ces mises à jour te seront envoyées par e-mail en toute simplicité.",
+        "options": {
+          "no": {
+            "title": "Pas de résumé",
+            "caption": "Choisis de ne recevoir aucun résumé d'activité."
+          },
+          "daily": {
+            "title": "Résumé quotidien",
+            "caption": "Choisis de recevoir un résumé de ta progression quotidien."
+          },
+          "weekly": {
+            "title": "Résumé hebdomadaire",
+            "caption": "Choisis de recevoir un résumé de ta progression hebdomadaire."
+          },
+          "monthly": {
+            "title": "Résumé mensuel",
+            "caption": "Choisis de recevoir un résumé de ta progression mensuel."
+          }
+        }
+      }
+    },
+    "terms": {
+      "label": "Termes et Conditions"
+    }
   }
 }
