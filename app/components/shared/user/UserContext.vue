@@ -2,6 +2,7 @@
 import { DropdownMenu } from "~/components/ui/dropdown-menu";
 import { HelpCircle, LogOut, Settings, ShieldUser, User } from "lucide-vue-next";
 import type { Align, Side } from "#shared/types/positions";
+import UserSettings from "~/components/shared/user/settings/UserSettings.vue";
 
 const { user } = useUser();
 
@@ -9,6 +10,8 @@ defineProps<{
   side?: Side;
   align?: Align;
 }>();
+
+const settingsOpened = ref(false);
 </script>
 
 <template>
@@ -21,57 +24,66 @@ defineProps<{
           as-child
         >
           <Avatar>
+            <AvatarImage
+              v-if="user.picture"
+              :src="user.picture"
+            />
             <AvatarFallback>
               {{ user.firstname[0] }}{{ user.lastname[0] }}
             </AvatarFallback>
           </Avatar>
         </Button>
-      </slot>
-    </DropdownMenuTrigger>
-    <DropdownMenuContent
-      :side="side"
-      :align="align"
-    >
-      <DropdownMenuGroup class="p-1 flex items-center gap-2">
-        <Avatar class="rounded-md size-10">
-          <AvatarFallback>
-            {{ user.firstname[0] }}{{ user.lastname[0] }}
-          </AvatarFallback>
-        </Avatar>
-        <div class="flex flex-col">
-          <p class="font-medium leading-none">
-            {{ user.name }}
-          </p>
-          <span class="text-xs text-muted-foreground">{{ user.email }}</span>
-        </div>
-      </DropdownMenuGroup>
-      <DropdownMenuSeparator />
-      <DropdownMenuGroup>
-        <DropdownMenuItem>
-          <User />
-          {{ $t("user-context.profile") }}
-        </DropdownMenuItem>
-        <DropdownMenuItem>
-          <Settings />
-          {{ $t("user-context.settings") }}
-        </DropdownMenuItem>
-        <DropdownMenuItem>
-          <HelpCircle />
-          {{ $t("user-context.getting-help") }}
-        </DropdownMenuItem>
-      </DropdownMenuGroup>
-      <template v-if="user.admin">
+      </DropdownMenuTrigger>
+      <DropdownMenuContent
+        :side="side"
+        :align="align"
+      >
+        <DropdownMenuGroup class="p-1 flex items-center gap-2">
+          <Avatar class="rounded-md size-10">
+            <AvatarImage
+              v-if="user.picture"
+              :src="user.picture"
+            />
+            <AvatarFallback>
+              {{ user.firstname[0] }}{{ user.lastname[0] }}
+            </AvatarFallback>
+          </Avatar>
+          <div class="flex flex-col">
+            <p class="font-medium leading-none">
+              {{ user.name }}
+            </p>
+            <span class="text-xs text-muted-foreground">{{ user.email }}</span>
+          </div>
+        </DropdownMenuGroup>
         <DropdownMenuSeparator />
-        <DropdownMenuItem>
-          <ShieldUser />
-          {{ $t("user-context.go-to-admin") }}
+        <DropdownMenuGroup>
+          <DropdownMenuItem>
+            <User />
+            {{ $t("user-context.profile") }}
+          </DropdownMenuItem>
+          <DropdownMenuItem @click="settingsOpened = true">
+            <Settings />
+            {{ $t("user-context.settings") }}
+          </DropdownMenuItem>
+          <DropdownMenuItem>
+            <HelpCircle />
+            {{ $t("user-context.getting-help") }}
+          </DropdownMenuItem>
+        </DropdownMenuGroup>
+        <template v-if="user.admin">
+          <DropdownMenuSeparator />
+          <DropdownMenuItem>
+            <ShieldUser />
+            {{ $t("user-context.go-to-admin") }}
+          </DropdownMenuItem>
+        </template>
+        <DropdownMenuSeparator />
+        <DropdownMenuItem variant="destructive">
+          <LogOut />
+          {{ $t("user-context.log-out") }}
         </DropdownMenuItem>
-      </template>
-      <DropdownMenuSeparator />
-      <DropdownMenuItem variant="destructive">
-        <LogOut />
-        {{ $t("user-context.log-out") }}
-      </DropdownMenuItem>
-    </DropdownMenuContent>
-  </DropdownMenu>
+      </DropdownMenuContent>
+    </DropdownMenu>
+    <UserSettings v-model:open="settingsOpened" />
+  </div>
 </template>
