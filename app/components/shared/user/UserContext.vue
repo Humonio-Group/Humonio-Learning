@@ -3,14 +3,7 @@ import { DropdownMenu } from "~/components/ui/dropdown-menu";
 import { HelpCircle, LogOut, Settings, ShieldUser, User } from "lucide-vue-next";
 import type { Align, Side } from "#shared/types/positions";
 
-const user = {
-  firstname: "Loic",
-  lastname: "Maes",
-  name: "Loic Maes",
-  email: "loic@humonio.com",
-  phone: "01 23 45 67 89",
-  admin: true,
-};
+const { user } = useUser();
 
 defineProps<{
   side?: Side;
